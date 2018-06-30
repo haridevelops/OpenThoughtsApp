@@ -38,6 +38,13 @@
       "comments": 10,
       "postDescription": "asd",
       "id": 5
+    },
+    {
+      "userName": "Harisudhan",
+      "likes": 2,
+      "comments": 10,
+      "postDescription": "hey this is second thoughtsss\n",
+      "id": 6
     }
   ],
   "comments": [

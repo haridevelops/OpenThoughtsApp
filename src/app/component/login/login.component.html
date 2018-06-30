@@ -2,14 +2,14 @@
   <div class="row main">
     <div class="panel-heading">
       <div class="panel-title text-center">
-        <h1>Open Thoughts Application</h1>
+        <h1>Login to Share your thoughts</h1>
         <hr />
       </div>
     </div>
     <div class="main-login main-center">
       <form class="form-horizontal" (ngSubmit)="onLogin()" #bean="ngForm">
         <div class="form-group">
-          <label for="email" class="cols-sm-2 control-label">Your Email</label>
+          <label for="email" class="cols-sm-2 control-label">User Name</label>
           <div class="cols-sm-10">
             <div class="input-group">
               <span class="input-group-addon">
@@ -18,9 +18,10 @@
               <input 
                 type="text" 
                 class="form-control" 
-                name="email" id="email" 
-                placeholder="Enter your Email"
-                ngModel />
+                name="username" id="username" 
+                placeholder="Enter your User Name"
+                ngModel
+                required />
             </div>
           </div>
         </div>
@@ -37,13 +38,17 @@
                 class="form-control" 
                 name="password" id="password" 
                 placeholder="Enter your Password"
-                ngModel />
+                ngModel
+                required/>
             </div>
           </div>
         </div>
-
+        <span (click)="onMessClick()" *ngIf="loginFailure">
+          Please provide the correct credentials...
+        </span>
         <div class="form-group ">
           <button 
+            [disabled]="!bean.valid"
             class="btn btn-primary btn-lg btn-block login-button">Login</button>
           <a routerLink="/register" type="button" class="btn btn-info btn-block">Register</a>
         </div>

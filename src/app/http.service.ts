@@ -12,6 +12,7 @@ export class HttpService {
   
   private url: string;
   private registerUrl: string;
+  private auth: boolean = false;
 
   constructor(private _http: HttpClient) { 
     this.url = "http://localhost:3000/posts";
@@ -39,5 +40,13 @@ export class HttpService {
   saveUsers(register: Registration) {
     const headers = new HttpHeaders({'Content-Type': 'application/json'});
     return this._http.post(this.registerUrl, register, {headers});
+  }
+
+  setAuth(value: boolean) {
+    this.auth = value;
+  }
+
+  isAuthenticated() {
+    return this.auth;
   }
 }
