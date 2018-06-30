@@ -7,7 +7,7 @@
       </div>
     </div>
     <div class="main-login main-center">
-      <form class="form-horizontal">
+      <form class="form-horizontal" (ngSubmit)="onLogin()" #bean="ngForm">
         <div class="form-group">
           <label for="email" class="cols-sm-2 control-label">Your Email</label>
           <div class="cols-sm-10">
@@ -15,7 +15,12 @@
               <span class="input-group-addon">
                 <i class="fa fa-envelope fa" aria-hidden="true"></i>
               </span>
-              <input type="text" class="form-control" name="email" id="email" placeholder="Enter your Email" />
+              <input 
+                type="text" 
+                class="form-control" 
+                name="email" id="email" 
+                placeholder="Enter your Email"
+                ngModel />
             </div>
           </div>
         </div>
@@ -27,17 +32,20 @@
               <span class="input-group-addon">
                 <i class="fa fa-lock fa-lg" aria-hidden="true"></i>
               </span>
-              <input type="password" class="form-control" name="password" id="password" placeholder="Enter your Password" />
+              <input 
+                type="password" 
+                class="form-control" 
+                name="password" id="password" 
+                placeholder="Enter your Password"
+                ngModel />
             </div>
           </div>
         </div>
 
         <div class="form-group ">
-          <button routerLink="/admindashboard" routerLinkActive="active" type="button" class="btn btn-primary btn-lg btn-block login-button">Login</button>
-          <a routerLink="/admindashboard" routerLinkActive="active" type="button" class="btn btn-info btn-block">Register</a>
-        </div>
-        <div class="login-register">
-          <a href="#">Forgot Password</a>
+          <button 
+            class="btn btn-primary btn-lg btn-block login-button">Login</button>
+          <a routerLink="/register" type="button" class="btn btn-info btn-block">Register</a>
         </div>
       </form>
     </div>

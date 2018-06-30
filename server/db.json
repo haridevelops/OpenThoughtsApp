@@ -59,5 +59,23 @@
   ],
   "profile": {
     "name": "typicode"
-  }
+  },
+  "users": [
+    {
+      "password": "durga",
+      "username": "durga",
+      "id": 1
+    },
+    {
+      "registrationId": 1,
+      "password": "lkajsdlk",
+      "username": "lksajdl",
+      "id": 2
+    },
+    {
+      "password": "harisudhan",
+      "username": "harisudhan",
+      "id": 3
+    }
+  ]
 }

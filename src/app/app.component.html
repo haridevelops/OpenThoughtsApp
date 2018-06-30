@@ -4,7 +4,13 @@
       <form (ngSubmit)="onSubmit()" #bean="ngForm">
         <legend>Share your thoughts...</legend>
         <div class="form-group">
-          <textarea class="from-control" rows="4" cols="90" #postDescription="ngModel" ngModel name="postDescription" required></textarea>
+          <textarea 
+            class="from-control" 
+            rows="4" cols="90" 
+            #postDescription="ngModel" 
+            ngModel 
+            name="postDescription" 
+            required></textarea>
         </div>
         <div class="form-group">
           <button class="btn btn-primary" [disabled]="!postDescription.valid">Post</button>
@@ -35,4 +41,6 @@
       </div>
   </div>
 </div> -->
-<app-login></app-login>
+<!-- <app-login></app-login> -->
+<!-- <app-register></app-register> -->
+<router-outlet></router-outlet>
