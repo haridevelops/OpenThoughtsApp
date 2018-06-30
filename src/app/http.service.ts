@@ -23,6 +23,13 @@ export class HttpService {
     return this._http.get<Posts[]>(this.url);
   }
 
+  getUsers(): Observable<Registration[]> {
+    return this._http.get<Registration[]>(this.registerUrl);
+  }
+
+  checkUsersinDB(username, password): Observable<Registration[]> {
+    return this._http.get<Registration[]>(this.registerUrl+ "?username="+username+"&password="+password);
+  }
 
   saveToDB(post: Posts) {
     const headers = new HttpHeaders({'Content-Type': 'application/json'});

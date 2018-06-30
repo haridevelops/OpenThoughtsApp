@@ -3,6 +3,7 @@ import { RouterModule } from "@angular/router";
 
 import { RegisterComponent } from "./component/register/register.component";
 import { LoginComponent } from "./component/login/login.component";
+import { HomeComponent } from "./component/home/home.component";
 
 const appRoutes = [
     {
@@ -17,6 +18,10 @@ const appRoutes = [
         path: "", 
         redirectTo: "login", 
         pathMatch: "full" 
+    },
+    {
+        path: "home",
+        component: HomeComponent
     }
 ]
 
