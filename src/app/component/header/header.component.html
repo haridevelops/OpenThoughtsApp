@@ -6,13 +6,14 @@
   <div class="collapse navbar-collapse">
     <ul class="nav navbar-nav navbar-right">
     <ng-template [ngIf]="!http.isAuthenticated()">
-      <li><a routerLink="register">Register</a></li>
-      <li><a routerLink="login">Sign in</a></li>
+      <li routerLinkActive="active"><a routerLink="register">Register</a></li>
+      <li routerLinkActive="active"><a routerLink="login">Sign in</a></li>
     </ng-template>
-    <li><a
+    <li routerLinkActive="active"><a
         style="cursor: pointer;"
         (click)="onLogout()"
         *ngIf="http.isAuthenticated()">Logout</a></li>
-    </ul>
+        <li *ngIf="http.isAuthenticated()">Welcome {{ username }}</li>
+      </ul>
    </div>
 </div>

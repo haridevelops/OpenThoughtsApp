@@ -4,6 +4,7 @@ import { RouterModule } from "@angular/router";
 import { RegisterComponent } from "./component/register/register.component";
 import { LoginComponent } from "./component/login/login.component";
 import { HomeComponent } from "./component/home/home.component";
+import { CommentComponent } from "./component/home/comment/comment.component";
 
 const appRoutes = [
     {
@@ -21,7 +22,13 @@ const appRoutes = [
     },
     {
         path: "home",
-        component: HomeComponent
+        component: HomeComponent,
+        children: [
+            { 
+                path: ":id/comments", 
+                component: CommentComponent
+            }
+        ]
     }
 ]
 

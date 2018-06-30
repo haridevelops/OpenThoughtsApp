@@ -31,10 +31,18 @@ export class HttpService {
   checkUsersinDB(username, password): Observable<Registration[]> {
     return this._http.get<Registration[]>(this.registerUrl+ "?username="+username+"&password="+password);
   }
-
+  /**
+   * 
+   * @param post object contains details of the post
+   */
   saveToDB(post: Posts) {
     const headers = new HttpHeaders({'Content-Type': 'application/json'});
     return this._http.post(this.url, post, {headers});
+  }
+
+  putToDB(id: number, post: Posts) {
+    const headers = new HttpHeaders({'Content-Type': 'application/json'});
+    return this._http.put(this.url+"/"+id, post, {headers});
   }
 
   saveUsers(register: Registration) {

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpService } from '../../http.service';
 import { Router } from '@angular/router';
+import { Globals } from '../../shared/globals';
 
 @Component({
   selector: 'app-header',
@@ -9,9 +10,15 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
 
+  username: string;
+
   constructor(
     private http: HttpService,
-    private route: Router) { }
+    private route: Router,
+    private global: Globals) { 
+      console.log(this.global.username)
+      this.username = this.global.username;
+    }
 
   ngOnInit() {
   }

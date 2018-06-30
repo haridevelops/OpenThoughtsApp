@@ -9,6 +9,8 @@ import { RegisterComponent } from './component/register/register.component';
 import { RoutingModule } from './app.routing';
 import { HomeComponent } from './component/home/home.component';
 import { HeaderComponent } from './component/header/header.component';
+import { CommentComponent } from './component/home/comment/comment.component';
+import { Globals } from './shared/globals';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,8 @@ import { HeaderComponent } from './component/header/header.component';
     LoginComponent,
     RegisterComponent,
     HomeComponent,
-    HeaderComponent
+    HeaderComponent,
+    CommentComponent
   ],
   imports: [
     BrowserModule,
@@ -24,7 +27,7 @@ import { HeaderComponent } from './component/header/header.component';
     HttpClientModule,
     RoutingModule
   ],
-  providers: [],
+  providers: [Globals],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

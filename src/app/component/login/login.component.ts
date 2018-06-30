@@ -6,6 +6,7 @@ import {
 import { HttpService } from '../../http.service';
 import { Registration } from '../../shared/registration.modal';
 import { Router } from '@angular/router';
+import { Globals } from '../../shared/globals';
 
 @Component({
   selector: 'app-login',
@@ -26,7 +27,8 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private http: HttpService,
-    private route: Router) {
+    private route: Router,
+    private global: Globals) {
       this.loginFailure = false;
     this.http.getUsers().subscribe((users) => {
       this.registeredUsers = users;
@@ -46,6 +48,8 @@ export class LoginComponent implements OnInit {
               if (responseFromDB.username == this.loginForm.value.username
                 && responseFromDB.password == this.loginForm.value.password) {
                 this.http.setAuth(true);
+                this.global.username = this.loginForm.value.username;
+                console.log(this.global.username)
                 this.route.navigate(['home']);
               }
             } else {
