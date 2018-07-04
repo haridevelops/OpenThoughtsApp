@@ -34,6 +34,9 @@
                                 (click)="addLike(post)" 
                                 class="glyphicon glyphicon-heart"
                                 > {{post.likes}}</span>
+                            <span 
+                                class="pull-right comments"
+                                (click)="showComments()"><a>comments</a></span>
                         </div>
                     </div>
                     <div *ngIf="showCommentProp">

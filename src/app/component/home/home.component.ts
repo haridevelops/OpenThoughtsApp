@@ -17,9 +17,10 @@ export class HomeComponent implements OnInit {
 
   posts: Posts[];
   like: boolean;
-
+  showCommentProp: boolean;
   constructor(private http: HttpService) {
     this.like = false;
+    this.showCommentProp = false;
     this.http.getPosts().subscribe((res) => {
       console.log(res);
       this.posts = res;
@@ -60,6 +61,10 @@ export class HomeComponent implements OnInit {
     }
     this.like = this.like ? false : true;
     
+  }
+
+  showComments() {
+    this.showCommentProp = !this.showCommentProp;
   }
   
   // not working for color
